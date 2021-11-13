@@ -17,9 +17,6 @@ def insertar(posicion,valor,lista):
 print(insertar(1,"aa",["1","2"]))
 
 
-
-
-
 def enter(numero):  
     #esta array 
     simbolos = ["0","1","2","3","4","5","6","7","8","9"]
@@ -37,7 +34,8 @@ def enter(numero):
                     #si la posición actual del número es igual a la posición de símbolos hace esto 
                     #en este cálculo se suma al resultado j por 10 elevado a la largaria del nunmero introducido,si el valor fuera 150
                     #haría 0 + 1 * 10 ** 2, eso daría 100, después 100 + 5 * 10 ** 1, y ahí daría 150
-                    resultado = resultado + j * 10 ** len(numero)-1-i
+                    
+                    resultado = resultado + j * 10**(len(numero) - 1 - i)
                     # j es igual al número que sale en la posición que revisa el bucle,es decir, si el número fuera 150
                     # y el bucle estuviera en la posición 0 por defecto, j sería 1
                     j=len(simbolos)
@@ -45,7 +43,9 @@ def enter(numero):
                     #en este apartado suma 1 a j por cada posición no coincidente y se vuelve a al while, esto para hacer que el programa avance posiciones a partir 
                     #del 0
                     j=j+1
-            return(resultado)
+            return(resultado,type(resultado))
+            
 
-print(enter(input()))
+print(enter(input("introduce un número ")))
+
 
